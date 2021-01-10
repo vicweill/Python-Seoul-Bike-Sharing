@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>API</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="row">
+            <h1>   </h1>
+            <h1>Seoul Bike Sharing</h1>
+        </div>
+        <div class="row">
+          <div class="column">
+          </div>
+          <div class="column" id="centered" style="margin: 0 auto; width:800px;">
+             <p>
+                 Welcome, the goal of this project is to estimate the number
+                 of bikes required given the date, the weather conditions
+                 and other parameters you could input.
+             </p>
+              <h2>
+                  Click on the button below to try the full prediction :
+              </h2>
+             <button class="btn btn-primary btn-block btn-large">
+                 <a href="/predict">FULL PREDICTION</a>
+             </button>
+              <h2>
+                  Click on the button below to try the short prediction :
+              </h2>
+             <button class="btn btn-primary btn-block btn-large" >
+                 <a href="/short">SHORT PREDICTION</a>
+             </button>
+             <p>
+                 Enjoy !
+             </p>
+          </div>
+          <div class="column">
+          </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>API</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+	<body>
+        <div class="row">
+            <h1>   </h1>
+            <h1>Seoul Bike Sharing</h1>
+        </div>
+        <div class="row">
+          <div class="column">
+          </div>
+          <div class="column" id="centered" style="margin: 0 auto; width:800px;">
+                <div class="infos">
+
+                 <!-- Main Input For Receiving Query to our ML -->
+                 <form action="{{ url_for('predict')}}"method="post">
+                     <input list="day_list" name="day" placeholder="Day" required="required">
+                        <datalist id="day_list">
+                            <option type="string" value="Monday">
+                            <option type="string" value="Tuesday">
+                            <option type="string" value="Wednesday">
+                            <option type="string" value="Thursday">
+                            <option type="string" value="Friday">
+                            <option type="string" value="Satuday">
+                            <option type="string" value="Sunday">
+                        </datalist>
+                     </input>
+                     <input list="month_list" name="month" placeholder="Month" required="required">
+                           <datalist id="month_list">
+                            <option type="string" value="January">
+                            <option type="string" value="February">
+                            <option type="string" value="March">
+                            <option type="string" value="April">
+                            <option type="string" value="May">
+                            <option type="string" value="June">
+                            <option type="string" value="July">
+                            <option type="string" value="August">
+                            <option type="string" value="September">
+                            <option type="string" value="October">
+                            <option type="string" value="November">
+                            <option type="string" value="December">
+                        </datalist>
+                     </input>
+                     <input type="number" name="hour" placeholder="Hour" min="0" max="23" required="required" />
+                     <input type="number" name="temperature" placeholder="Temperature (°C)" min="-10" max="45" required="required" />
+                     <input type="number" name="humidity" placeholder="Humidity (%)" min="0" max="100" required="required" />
+                     <input type="number" name="wind_speed" placeholder="Wind speed (m/s)" required="required" />
+                     <input type="number" name="visibility" placeholder="Visibility (10m)" required="required" />
+                     <input type="number" name="solar_radiation" placeholder="Solar Radiation (MJ/m²)" required="required" />
+                     <input type="number" name="rainfall" placeholder="Rainfall (mm)" required="required" />
+                     <input type="number" name="snowfall" placeholder="Snowfall (cm)" required="required" />
+                     <input list="holiday_list" name="holiday" placeholder="Holiday" required="required">
+                        <datalist id="holiday_list">
+                            <option type="string" value="Yes">
+                            <option type="string" value="No">
+                        </datalist>
+                     </input>
+                     <input list="functioning_day_list" name="functioning_day" placeholder="Functioning Day" required="required">
+                         <datalist id="functioning_day_list">
+                            <option type="string" value="Yes" placeholder="Yes">
+                            <option type="string" value="No" placeholder="No">
+                        </datalist>
+                     </input>
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                     <h1>
+                     </h1>
+
+                     {{ prediction_text }}
+                     <p>Click here to go back to the menu :</p>
+                     <a href="/">MENU</a>
+
+                </form>
+            </div>
+          </div>
+          <div class="column">
+          </div>
+        </div>
+
+
+
+	</body>
+</html>
