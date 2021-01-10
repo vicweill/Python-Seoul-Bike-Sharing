@@ -11,6 +11,8 @@ When you'll have run the Notebook, you'll be able to take a look the flask part 
 
 I found the template on internet and I wanted to improve but I had no time, maybe I will do it later.
 
+Important : sometimes, we need to unzoom the page to see the results, don't forget to do it on the 'full prediction' page ;)
+
 ** > I don't know why but VS Code doesn't find numpy when I try to import it. The problem might come from my computer.
 
 ## Conclusions
